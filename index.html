@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expected Utility Learning Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Expected Utility Learning Tool</h1>
+        <p>Learn how expected utility helps evaluate choices under uncertainty. Follow the steps below for a guided explanation and try it yourself!</p>
+    </header>
+
+    <!-- Introduction Section -->
+    <section id="introduction">
+        <h2>What is Expected Utility?</h2>
+        <p>Expected utility is a concept in decision-making that helps you weigh uncertain outcomes. It’s calculated as:</p>
+        <div class="formula">
+            <p><strong>Expected Utility = Probability of Outcome × Utility of Outcome</strong></p>
+        </div>
+        <p>In this formula, <strong>probability</strong> refers to the likelihood of an outcome occurring, and <strong>utility</strong> refers to how much you value that outcome.</p>
+
+        <button id="showExample1" class="next-button">See a Worked Example</button>
+    </section>
+
+    <!-- Worked Example 1 -->
+    <section id="example1" class="hidden">
+        <h2>Worked Example 1: Lottery Ticket</h2>
+        <p>Let’s look at a lottery ticket where you have a <strong>50%</strong> chance to win <strong>$100</strong> and a <strong>50%</strong> chance to win nothing ($0).</p>
+        <p>If we assign a utility of <strong>80</strong> to winning $100, we can calculate the expected utility like this:</p>
+        <ul>
+            <li><strong>Probability:</strong> 50% (0.50)</li>
+            <li><strong>Utility of winning $100:</strong> 80</li>
+        </ul>
+        <p>Expected Utility = 0.50 × 80 = <strong>40</strong></p>
+        <p>This means, on average, we expect to get 40 “units” of satisfaction from this gamble.</p>
+
+        <button id="showExample2" class="next-button">Next: Try Another Example</button>
+    </section>
+
+    <!-- Worked Example 2 -->
+    <section id="example2" class="hidden">
+        <h2>Worked Example 2: Lottery Comparison</h2>
+        <p>Now, let’s compare two lotteries:</p>
+        <ul>
+            <li><strong>Lottery 1:</strong> 20% chance to win $50</li>
+            <li><strong>Lottery 2:</strong> 40% chance to win $30</li>
+        </ul>
+        <p>We’ll assign a utility of <strong>60</strong> to winning $50 and <strong>40</strong> to winning $30. Let’s calculate:</p>
+        <ul>
+            <li>Lottery 1: 0.20 × 60 = <strong>12</strong></li>
+            <li>Lottery 2: 0.40 × 40 = <strong>16</strong></li>
+        </ul>
+        <p>In this case, Lottery 2 has a higher expected utility (16), so it might be the better option!</p>
+
+        <button id="startInteractive" class="next-button">Try It Yourself</button>
+    </section>
+
+    <!-- Interactive Section: Student Inputs (New Investment Example) -->
+    <section id="interactiveSection" class="hidden">
+        <h2>Try It Yourself: Compare Two Investment Options</h2>
+        <p>Now it’s your turn to decide how much you value the outcomes for two different investment options. Adjust the sliders to set the utility for each investment.</p>
+
+        <!-- Step 1: Investment Option 1 -->
+        <div id="step1">
+            <h3>Investment Option 1</h3>
+            <p>Investment Option 1 gives you a <strong>25%</strong> chance to gain <strong>$200</strong> and a <strong>75%</strong> chance to gain nothing.</p>
+            <p>Adjust the slider to reflect how much you value gaining $200:</p>
+
+            <div class="slider-container">
+                <label for="utility1">Utility of Gaining $200:</label>
+                <input type="range" id="utility1" min="0" max="100" step="1" value="50">
+                <span id="utility1Value">50</span>
+            </div>
+
+            <button id="revealStep2" class="next-button">Next: Investment Option 2</button>
+        </div>
+
+        <!-- Step 2: Investment Option 2 -->
+        <div id="step2" class="hidden">
+            <h3>Investment Option 2</h3>
+            <p>Investment Option 2 gives you a <strong>50%</strong> chance to gain <strong>$100</strong> and a <strong>50%</strong> chance to gain nothing.</p>
+            <p>Adjust the slider to reflect how much you value gaining $100:</p>
+
+            <div class="slider-container">
+                <label for="utility2">Utility of Gaining $100:</label>
+                <input type="range" id="utility2" min="0" max="100" step="1" value="50">
+                <span id="utility2Value">50</span>
+            </div>
+
+            <button id="calculateExpectedUtility" class="next-button">Calculate Expected Utility</button>
+        </div>
+
+        <!-- Step 3: Display Calculated Expected Utility -->
+        <div id="step3" class="hidden">
+            <h3>Comparison of Expected Utility</h3>
+            <p>Here’s the expected utility for each investment option based on your selections:</p>
+            <div id="expectedUtility">
+                <h4>Investment Option 1 (25% chance of $200): <span id="calculatedExpectedUtility1">0.00</span></h4>
+                <h4>Investment Option 2 (50% chance of $100): <span id="calculatedExpectedUtility2">0.00</span></h4>
+            </div>
+
+            <!-- Dynamic Graph -->
+            <div id="utilityGraph"></div>
+
+            <!-- Key Takeaways -->
+            <div id="section3KeyTakeaways" class="takeaways">
+                <h3>Key Takeaways</h3>
+                <ul>
+                    <li>Expected utility combines the probability and how much you value each potential outcome (utility).</li>
+                    <li>The higher the expected utility, the more favorable the investment, based on your preferences.</li>
+                </ul>
+            </div>
+
+            <!-- Dynamic Feedback Section -->
+            <div id="feedback" class="hidden">
+                <h3>Feedback Based on Your Selection</h3>
+                <p id="feedbackText">Your current selection suggests that...</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

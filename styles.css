@@ -1,0 +1,106 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    font-size: 16px;
+}
+
+header {
+    background-color: #ff7f0e;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.slider-container {
+    margin-bottom: 25px;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin: 12px 0;
+}
+
+.takeaways {
+    margin-top: 35px;
+    padding: 20px;
+    background-color: #e6f7ff;
+    border-left: 5px solid #1890ff;
+    font-size: 18px;
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 220px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; 
+    left: 50%;
+    margin-left: -110px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Button Styling */
+.next-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #ff7f0e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.next-button:hover {
+    background-color: #e66b00;
+}
+
+/* Hidden and Visible Sections */
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
